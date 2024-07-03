@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(phoneID, name, brand, price) {
+            this.phoneID = phoneID.toString();
+            this.name = name.toString();
+            this.brand = brand.toString();
+            this.price = price;
+        }
+
+        getPhoneID() {
+            return this.phoneID;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getBrand() {
+            return this.brand;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPhoneID(phoneID) {
+            this.phoneID = phoneID.toString();
+        }
+
+        setName(name) {
+            this.name = name.toString();
+        }
+
+        setBrand(brand) {
+            this.brand = brand.toString();
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        toString() {
+            return this.phoneID + ',' + this.name + ',' + this.brand + ',' + this.price;
+        }
+    }
+
+    class manageMobile {
+        constructor() {
+            this.listMobile = [];
+        }
+
+        addNewMobile(newMobile) {
+            this.listMobile.push(newMobile);
+            this.listMobile = this.listMobile.sort((a, b) => a.name - b.name);
+        }
+
+        printListMoblie() {
+            for (const item of this.listMobile) {
+                document.write(item.toString() + "<br>");
+            }
+        }
+    }
+
+    let mobile1 = new Mobile("ma001", "promax", "iphone", 11000);
+    let mobile2 = new Mobile("ma002", "nokia", "samsung", 12000);
+    let managePhone = new manageMobile();
+    managePhone.addNewMobile(mobile1);
+    managePhone.addNewMobile(mobile2);
+    managePhone.printListMoblie();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let n = +prompt('Nhập số phần tử của mảng: ');
+    while (n <= 0 || n > 20) {
+        n = +prompt('Mời bạn nhập lại số n<=20');
+    }
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        let element = +prompt('Mời bạn nhập phần tử thứ ' + i);
+        arr.push(element);
+    }
+    document.write('Danh sách các phần tử của mảng là: ' + arr +"<br>");
+    let sumEvenNum = 0;
+    let sumOddNum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sumEvenNum += arr[i];
+        } else {
+            sumOddNum += arr[i];
+        }
+    }
+    let result;
+    result = sumEvenNum - sumOddNum;
+    document.write('Hiệu của tổng các số chẵn và tổng các số lẻ trong mảng là: '+result);
+</script>
+</body>
+</html>
