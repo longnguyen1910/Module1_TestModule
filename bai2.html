@@ -9,7 +9,7 @@
 </head>
 <body>
 <script>
-    function countUpperChar(string) {
+   function countUpperChar(string) {
         if (typeof (string) !== 'string') {
             return false;
         }
@@ -25,10 +25,10 @@
         if (count > 0) {
             return count;
         } else {
-            return console.log('The Strings is not contain upper char');
+            return alert('The Strings is not contain upper char');
         }
     }
-    let result = countUpperChar('abcdef');
+    let result = countUpperChar('abcdeF');
     console.log(result);
 
 
